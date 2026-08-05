@@ -6,8 +6,6 @@
 @media (max-width: 1200px){
   .container-custom{ padding: 0 20px; }
   .skills-grid{ grid-template-columns: repeat(3, 1fr); }
-  .stats-grid{ grid-template-columns: repeat(3, 1fr); }
-  .stat-item:nth-child(3){ border-right:none; }
 }
 
 /* Tablet */
@@ -30,10 +28,6 @@
 
   .projects-grid{ grid-template-columns: repeat(2, 1fr); }
   .services-grid{ grid-template-columns: repeat(2, 1fr); }
-
-  .stats-grid{ grid-template-columns: repeat(3, 1fr); }
-  .stat-item{ border-bottom:1px solid var(--border-soft); }
-  .stat-item:nth-child(3n){ border-right:none; }
 
   .contact-row{ grid-template-columns: 1fr; gap: 40px; }
 
@@ -60,10 +54,6 @@
 
   .projects-grid{ grid-template-columns: 1fr; }
   .services-grid{ grid-template-columns: 1fr; }
-
-  .stats-grid{ grid-template-columns: repeat(2, 1fr); }
-  .stat-item{ padding: 34px 8px; }
-  .stat-item:nth-child(2n){ border-right:none; }
 
   .form-row{ grid-template-columns: 1fr; }
 

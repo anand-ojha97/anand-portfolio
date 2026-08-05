@@ -56,34 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- Animated counters ---------- */
-  const counters = document.querySelectorAll('.counter');
-  const animateCounter = (el) => {
-    const target = parseInt(el.getAttribute('data-count'), 10);
-    const duration = 1400;
-    const start = performance.now();
-
-    const tick = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.floor(eased * target);
-      if (progress < 1) requestAnimationFrame(tick);
-      else el.textContent = target;
-    };
-    requestAnimationFrame(tick);
-  };
-
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        animateCounter(entry.target);
-        counterObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.6 });
-
-  counters.forEach((c) => counterObserver.observe(c));
-
   /* ---------- Editor window tilt-on-mouse-move ---------- */
   const tiltCard = document.getElementById('tiltCard');
   if (tiltCard && window.matchMedia('(min-width: 992px)').matches) {
